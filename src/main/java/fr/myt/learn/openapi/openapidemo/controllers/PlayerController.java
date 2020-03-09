@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+
 @RestController
 @RequestMapping("/")
 public class PlayerController {
@@ -15,12 +17,12 @@ public class PlayerController {
     @Autowired
     PlayerPort playerPort;
 
-    @GetMapping(value = "/players")
+    @GetMapping(value = "/players",produces = APPLICATION_JSON_UTF8_VALUE)
     List<Player> getAllPlayers() {
         return playerPort.findAll();
     }
 
-    @GetMapping(value = "/players/{id}")
+    @GetMapping(value = "/players/{id}",produces = APPLICATION_JSON_UTF8_VALUE)
     Optional<Player> getPlayer(@PathVariable Long id) {
         if (playerPort.findById(id).isPresent()) {
             return playerPort.findById(id);
@@ -28,9 +30,9 @@ public class PlayerController {
         return Optional.empty();
     }
 
-    @PostMapping(value = "players")
+    @PostMapping(value = "players",consumes = APPLICATION_JSON_UTF8_VALUE)
     Player addPlayer(@RequestBody Player player) {
-        return playerPort.save(player);
+         return playerPort.save(player);
 
     }
 

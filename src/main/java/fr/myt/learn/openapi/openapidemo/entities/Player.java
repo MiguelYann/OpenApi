@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
@@ -15,10 +16,11 @@ import javax.persistence.Id;
 public class Player {
 
     @Id
-    @GeneratedValue
+
     private Long id;
 
+    @NotBlank
     private String firstName;
-
+    @NotBlank
     private String lastName;
 }
