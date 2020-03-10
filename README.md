@@ -92,3 +92,4 @@ We call also configure the plugin, with custom values like
 ## Tips
 
 * You must add properties **produces/consumes = APPLICATION_JSON_UTF8_VALUE** aux methodes de mapping
+* [More Doc](https://springdoc.github.io/springdoc-openapi-demos/faq.html#how-can-i-configure-swagger-ui)
