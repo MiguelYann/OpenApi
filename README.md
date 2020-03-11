@@ -93,3 +93,16 @@ We call also configure the plugin, with custom values like
 
 * You must add properties **produces/consumes = APPLICATION_JSON_UTF8_VALUE** aux methodes de mapping
 * [More Doc](https://springdoc.github.io/springdoc-openapi-demos/faq.html#how-can-i-configure-swagger-ui)
+
+## Issues
+
+We have an issue due to create groupe Api; then for using **GroupedOpenApi**
+youu must install this dependency:
+
+````xml
+ <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-webmvc-core</artifactId>
+      <version>1.2.33</version>
+   </dependency>
+````
